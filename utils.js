@@ -11,7 +11,7 @@ function generateRandomString(length) {
 function generateKizCodeSting(){
   // Код формируется по принципу: 010 + barcode + 21 + 6 любых символов + 93 + 4 любых символа 
   // Пример 0104607060382105215Rm3g!93Zjt3, где barcode = 4607060382105
-  const barcode = getElementById("barcode").textContent;
+  const barcode = document.getElementById("barcode").textContent;
   
   const part1 = "010";
   const part2 = barcode;
