@@ -55,9 +55,11 @@ function drawCode(barcodeType){
       const imgElementId = 'img_' + IMAGES_COUNT.toString();
       imgElement.id = imgElementId;
       
-      const textNode = document.createTextNode("\n"+codeText);
+      const nameElement = document.createElement('p');
+      nameElement.textContent = codeText;
+      // const textNode = document.createTextNode("\n"+codeText);
       divElement.appendChild(imgElement);
-      divElement.appendChild(textNode);
+      divElement.appendChild(nameElement);
       divElement.appendChild(hrElement);
     
       generatedResultElement.insertBefore(divElement, generatedResultElement.children[0]);
