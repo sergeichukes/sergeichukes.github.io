@@ -18,5 +18,7 @@ function generateKizCodeSting(barcode){
   const part5 = "93";
   const part6 = generateRandomString(4);
   
-  return part1 + part2 + part3 + part4 + part5 + part6;
+  const result = part1 + part2 + part3 + part4 + part5 + part6;
+  
+  document.getElementById("kizString").textContent = result;
 }
