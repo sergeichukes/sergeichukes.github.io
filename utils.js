@@ -47,7 +47,7 @@ function drawCode(barcodeType){
   try {
       bwipjs.toCanvas(canvas, options);
       
-      // Add new img element 
+      // Добавляем тег img. Тег добавляется в начало списка
       const generatedResultElement = document.getElementById("generatedResults");
       const imgElement = document.createElement("img");
       const divElement = document.createElement("div");
@@ -55,7 +55,7 @@ function drawCode(barcodeType){
       const imgElementId = 'img_' + IMAGES_COUNT.toString();
       imgElement.id = imgElementId;
       
-      const textNode = document.createTextNode(kizString);
+      const textNode = document.createTextNode("\n"+codeText);
       divElement.appendChild(imgElement);
       divElement.appendChild(textNode);
       divElement.appendChild(hrElement);
@@ -63,7 +63,7 @@ function drawCode(barcodeType){
       generatedResultElement.insertBefore(divElement, generatedResultElement.children[0]);
       IMAGES_COUNT++;
       
-      // Draw the code in the new img element
+      // Отображаем код в созданном теге
       document.getElementById(imgElementId).src = canvas.toDataURL('image/png');
   } catch (e) {
       console.log(e);
