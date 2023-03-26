@@ -12,10 +12,9 @@
     Enter barcode:<input type="text" id="barcode" required>
     <button onclick="generateKizCodeSting()">Generate KIZ</button>
     <div id="kizString"></div>
+    <button onclick="drawCode('datamatrix')">Draw Data Matrix</button>
+    <button onclick="drawCode('code128')">Draw Barcode</button>
   </div>
-
-  <button onclick="drawCode('datamatrix')">Draw Data Matrix</button>
-  <button onclick="drawCode('code128')">Draw Barcode</button>
   <hr>
   <div id="generatedResults">
     Generated Results
