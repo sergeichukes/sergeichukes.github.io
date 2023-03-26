@@ -34,9 +34,9 @@ function drawKizDataMatrix(){
   
   let canvas = document.createElement('canvas');
   const options = {
-            bcid:        'code128',       // Barcode type
+            bcid:        'datamatrix',       // Barcode type
             text:        kizString,       // Text to encode
-            scale:       1,               // 3x scaling factor
+            scale:       2,               // 3x scaling factor
             height:      10,              // Bar height, in millimeters
             includetext: true,            // Show human-readable text
             textxalign:  'center',        // Always good to set this
