@@ -29,12 +29,12 @@ function generateKizCodeSting(){
 
 let IMAGES_COUNT = 0;
 
-function drawKizDataMatrix(){
+function drawCode(barcodeType){
   const kizString = document.getElementById("kizString").textContent;
   
   let canvas = document.createElement('canvas');
   const options = {
-            bcid:        'datamatrix',       // Barcode type
+            bcid:        barcodeType,       // Barcode type
             text:        kizString,       // Text to encode
             scale:       2,               // 3x scaling factor
             height:      10,              // Bar height, in millimeters
