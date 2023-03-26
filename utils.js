@@ -49,9 +49,11 @@ function drawKizDataMatrix(){
       const generatedResultElement = document.getElementById("generatedResults");
       const imgElement = document.createElement("img");
       const divElement = document.createElement("div");
+      const hrElement = document.createElement("hr");
       const imgElementId = 'img_' + IMAGES_COUNT.toString();
       imgElement.id = imgElementId;
       generatedResultElement.prepend(divElement).appendChild(imgElement);
+      generatedResultElement.appendChild(hrElement);
       IMAGES_COUNT++;
       
       // Draw the code in the new img element
