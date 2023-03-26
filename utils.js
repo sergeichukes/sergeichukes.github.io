@@ -46,10 +46,10 @@ function drawKizDataMatrix(){
       bwipjs.toCanvas(canvas, options);
       
       // Add new img element 
+      const generatedResultElement = document.getElementById("generatedResults");
       const imgElement = generatedResultElement.createElement("img");
       const imgElementId = 'img_' + IMAGES_COUNT.toString();
       imgElement.id = imgElementId;
-      const generatedResultElement = document.getElementById("generatedResults");
       generatedResultElement.appendChild(imgElement);
       IMAGES_COUNT++;
       
