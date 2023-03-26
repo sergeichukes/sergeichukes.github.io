@@ -31,11 +31,13 @@ let IMAGES_COUNT = 0;
 
 function drawCode(barcodeType){
   const kizString = document.getElementById("kizString").textContent;
+  const barcodeString = document.getElementById("barcode").value;
+  const codeText = barcodeType === 'datamatrix' ? kizString : barcodeString;
   
   let canvas = document.createElement('canvas');
   const options = {
             bcid:        barcodeType,       // Barcode type
-            text:        kizString,       // Text to encode
+            text:        codeText,       // Text to encode
             scale:       2,               // 3x scaling factor
             height:      10,              // Bar height, in millimeters
             includetext: true,            // Show human-readable text
