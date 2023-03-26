@@ -53,6 +53,7 @@ function drawKizDataMatrix(){
       const imgElementId = 'img_' + IMAGES_COUNT.toString();
       imgElement.id = imgElementId;
       divElement.appendChild(imgElement);
+      divElement.textContent = kizString;
       divElement.appendChild(hrElement);
       generatedResultElement.insertBefore(divElement, generatedResultElement.children[0]);
       IMAGES_COUNT++;
