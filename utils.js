@@ -20,5 +20,7 @@ function generateKizCodeSting(barcode){
   
   const result = part1 + part2 + part3 + part4 + part5 + part6;
   
+  console.log(result);
+  
   document.getElementById("kizString").textContent = result;
 }
