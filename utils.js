@@ -47,7 +47,7 @@ function drawKizDataMatrix(){
       
       // Add new img element 
       const generatedResultElement = document.getElementById("generatedResults");
-      const imgElement = generatedResultElement.createElement("img");
+      const imgElement = document.createElement("img");
       const imgElementId = 'img_' + IMAGES_COUNT.toString();
       imgElement.id = imgElementId;
       generatedResultElement.appendChild(imgElement);
