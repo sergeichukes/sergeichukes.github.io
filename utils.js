@@ -26,3 +26,24 @@ function generateKizCodeSting(){
   
   document.getElementById("kizString").textContent = result;
 }
+
+function drawKizDataMatrix(){
+  const kizString = document.getElementById("kizString").textContent;
+  
+  let canvas = document.createElement('canvas');
+  const options = {
+            bcid:        'code128',       // Barcode type
+            text:        kizString,       // Text to encode
+            scale:       3,               // 3x scaling factor
+            height:      10,              // Bar height, in millimeters
+            includetext: true,            // Show human-readable text
+            textxalign:  'center',        // Always good to set this
+  };
+  
+  try {
+      bwipjs.toCanvas(canvas, options);
+      document.getElementById('kizImg').src = canvas.toDataURL('image/png');
+  } catch (e) {
+      console.log(e);
+  }
+}
