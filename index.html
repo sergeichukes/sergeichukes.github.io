@@ -3,13 +3,17 @@
 <head>
   <script type="text/javascript" src="utils.js"></script>
   <script type="text/javascript" src="bwip-js-min.js"></script>
+  <style>
+    div {padding: 15px}
+  </style>
 </head>
 <body>
+  <div>
+    Enter barcode:<input type="text" id="barcode" required>
+    <button onclick="generateKizCodeSting()">Generate KIZ</button>
+    <div id="kizString"></div>
+  </div>
 
-  Enter barcode:<input type="text" id="barcode" required>
-  <button onclick="generateKizCodeSting()">Generate KIZ</button>
-
-  <div id="kizString"></div>
   <button onclick="drawCode('datamatrix')">Draw Data Matrix</button>
   <button onclick="drawCode('code128')">Draw Barcode</button>
   <hr>
