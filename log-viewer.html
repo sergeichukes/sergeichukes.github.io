@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Viewer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="back-button">
+        <a href="index.html">← На главную</a>
+    </div>
+
+    <div class="container">
+        <h1>Log Viewer</h1>
+        
+        <div class="controls">
+            <div class="file-upload">
+                <input type="file" id="fileInput" accept=".txt">
+                <label for="fileInput" class="upload-button">Выберите файл лога</label>
+            </div>
+            
+            <div class="search-control">
+                <input type="text" 
+                       id="searchInput" 
+                       class="search-input" 
+                       placeholder="Введите текст для поиска">
+                <button id="searchButton" class="search-button">
+                    Поиск
+                </button>
+            </div>
+
+            <div class="direction-control">
+                <input type="checkbox" id="readFromEnd" checked>
+                <label for="readFromEnd">Читать с конца файла (от новых записей к старым)</label>
+            </div>
+        </div>
+
+        <div id="loader" class="loader-container" style="display: none;">
+            <div class="loader"></div>
+            <div class="loader-text">Обработка файла...</div>
+        </div>
+
+        <div class="table-container">
+            <table id="logTable">
+                <thead>
+                    <tr>
+                        <th class="sortable" data-sort="timestamp">Timestamp ⇅</th>
+                        <th>Message</th>
+                        <th>Level</th>
+                        <th>Logger</th>
+                        <th>ID</th>
+                        <th>Additional Info</th>
+                    </tr>
+                </thead>
+                <tbody id="logTableBody">
+                </tbody>
+            </table>
+        </div>
+
+        <div class="load-more-container">
+            <button id="loadMoreBtn" class="load-more-button" style="display: none;">
+                Загрузить еще (не работает, если таблица отфильтрована)
+            </button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 

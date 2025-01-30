@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="bwip-js-min.js"></script>
+    <style>
+        .qr-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .codes-table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .codes-table th,
+        .codes-table td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .codes-table th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .codes-table img {
+            max-width: 200px;
+            height: auto;
+        }
+
+        .codes-table tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .code-text {
+            font-size: 12px;
+            color: #666;
+            word-break: break-all;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .code-data {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .barcode-text, .kiz-text {
+            font-size: 12px;
+            color: #666;
+            word-break: break-all;
+        }
+
+        .text-label {
+            font-weight: bold;
+            color: #333;
+            font-size: 12px;
+            margin-bottom: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="back-button">
+        <a href="index.html">← На главную</a>
+    </div>
+
+    <div class="container">
+        <h1>QR Generator</h1>
+        
+        <div class="qr-container">
+            <div class="input-group">
+                <label for="barcode">Введите штрих-код:</label>
+                <input type="text" id="barcode" required>
+            </div>
+
+            <div class="input-group">
+                <button onclick="generateAndDrawCodes()" class="search-button">
+                    Сгенерировать KIZ
+                </button>
+                <button onclick="drawBarcodeAsQR()" class="search-button">
+                    Отрисовать ШК как QR DataMatrix
+                </button>
+                <div id="kizString" style="display: none;"></div>
+            </div>
+        </div>
+
+        <table class="codes-table">
+            <thead>
+                <tr>
+                    <th>Data Matrix</th>
+                    <th>Штрих-код</th>
+                    <th>Данные</th>
+                </tr>
+            </thead>
+            <tbody id="generatedResults">
+                <!-- Сгенерированные коды будут добавляться сюда -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="utils.js"></script>
+</body>
+</html> 

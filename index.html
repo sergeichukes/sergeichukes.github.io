@@ -1,23 +1,125 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-  <script type="text/javascript" src="utils.js"></script>
-  <script type="text/javascript" src="bwip-js-min.js"></script>
-  <style>
-    div {padding: 15px}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            flex: 1;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        .cards-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 20px;
+        }
+
+        .card {
+            width: 250px;
+            height: 250px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .card-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+            color: #4CAF50;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            color: #333;
+        }
+
+        .card-description {
+            font-size: 14px;
+            color: #666;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        /* Стили для футера */
+        .footer {
+            margin-top: 40px;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #ddd;
+        }
+
+        .footer a {
+            color: #4CAF50;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: #45a049;
+        }
+    </style>
 </head>
 <body>
-  <div>
-    Enter barcode:<input type="text" id="barcode" required>
-    <button onclick="generateKizCodeSting()">Generate KIZ</button>
-    <div id="kizString"></div>
-    <button onclick="drawCode('datamatrix')">Draw Data Matrix</button>
-    <button onclick="drawCode('code128')">Draw Barcode</button>
-  </div>
-  <hr>
-  <div id="generatedResults">
-    Generated Results
-  </div>
+    <div class="container">
+        <h1>QA Инструменты</h1> 
+        
+        <div class="cards-container">
+            <a href="log-viewer.html" class="card">
+                <div class="card-icon">📋</div>
+                <div class="card-title">Log Viewer</div>
+                <div class="card-description">Просмотр и анализ логов</div>
+            </a>
+
+            <a href="qr-generator.html" class="card">
+                <div class="card-icon">🔲</div>
+                <div class="card-title">QR Generator</div>
+                <div class="card-description">Генерация QR и штрих-кодов</div>
+            </a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <a href="https://github.com/sergeichukes" target="_blank">
+            GitHub: @sergeichukes
+        </a>
+    </footer>
 </body>
-</html>
+</html> 
