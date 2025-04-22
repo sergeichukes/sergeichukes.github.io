@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Delta</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="back-button">
+        <a href="index.html">← На главную</a>
+    </div>
+    <h1>Calculate Time Delta</h1>
+    <form id="time-delta-form">
+        <label for="start">Start Date and Time:</label>
+        <input id="start" name="start" required class="search-input">
+        <br>
+        <label for="end">End Date and Time:</label>
+        <input id="end" name="end" required class="search-input">
+        <br>
+        <button type="button" id="calculate-delta" class="search-button">Calculate Delta</button>
+    </form>
+    <div id="result">
+        <h2>Result</h2>
+        <p id="delta-output">Enter dates to calculate the time delta.</p>
+    </div>
+    <script src="utils.js"></script>
+    <script src="time-delta.js"></script>
+</body>
+</html>

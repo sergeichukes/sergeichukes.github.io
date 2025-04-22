@@ -291,3 +291,13 @@ th:nth-child(6) { width: 10%; }  /* Additional Info */
 .back-button a:hover {
     color: #45a049;
 } 
+
+#time-delta-form {
+    margin: 20px 0;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #333;
+}

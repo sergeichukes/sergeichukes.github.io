@@ -228,3 +228,19 @@ async function drawBarcodeAsQR() {
         alert('Произошла ошибка при генерации QR кода');
     }
 }
+
+function getTimeDelta(startDate, endDate) {
+  const start = new Date(startDate);
+  const end = new Date(endDate);
+  
+  const diff = end - start; // В миллисекундах
+  
+  // Convert to minutes and seconds
+  const minutes = Math.floor(diff / 60000);
+  const seconds = Math.floor((diff % 60000) / 1000);
+  
+  return {
+      minutes,
+      seconds
+  };
+}
